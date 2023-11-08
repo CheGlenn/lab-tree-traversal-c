@@ -15,6 +15,13 @@ public class BinaryTreeExperiment {
         "frog", "gnu", "hippo", "iguana", "jackalope", "koala", "llama"};
     BinaryTree<String> tree = new BinaryTree<String>(strings);
 
-    tree.dump(pen);
+    Integer[] ints = {1, 3, 9, 6, 4, 8, 10, 11, 2};
+
+    BinaryTree<Integer> numTree = new BinaryTree<Integer>(ints);
+
+    tree.elements01(pen);
+
+    pen.close();
+
   } // main
 } // class BinaryTreeExperiment

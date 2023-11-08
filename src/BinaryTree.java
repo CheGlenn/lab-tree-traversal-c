@@ -51,6 +51,10 @@ public class BinaryTree<T> implements Iterable<T> {
     dump(pen, root, "");
   } // dump(PrintWriter)
 
+  public void elements01(PrintWriter pen) {
+    elements01(pen, root, " ");
+  }
+
   /**
    * Get an iterator for the tree.
    */
@@ -101,5 +105,28 @@ public class BinaryTree<T> implements Iterable<T> {
           makeTree(values, mid + 1, ub));
     } // if/else
   } // makeTree(T[], int, int)
+
+  void elements01(PrintWriter pen, BinaryTreeNode<T> node, String indent){
+    if(node == null){
+      pen.print("");
+    } else {
+      pen.print(node.value + indent);
+      if ((node.left != null) || (node.right != null)) {
+        elements01(pen, node.left, indent);
+        elements01(pen, node.right, indent);
+      }
+    }
+  }
+
+  void elements02(PrintWriter pen, BinaryTreeNode<T> node, String indent){
+    if(node == null){
+      pen.print("");
+    } else {
+      if ((node.left != null) || (node.right != null)){
+        pen.print(node.left.value);
+        pen.print(node.right.value);
+      } 
+    }
+  }
 
 } // class BinaryTree
